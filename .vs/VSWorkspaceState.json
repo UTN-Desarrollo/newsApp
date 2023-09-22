@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\aspnet-core\\src",
+    "\\aspnet-core\\src\\NewsApp.Application",
+    "\\aspnet-core\\src\\NewsApp.DbMigrator",
+    "\\aspnet-core\\src\\NewsApp.Domain\\Data"
+  ],
+  "PreviewInSolutionExplorer": false
+}

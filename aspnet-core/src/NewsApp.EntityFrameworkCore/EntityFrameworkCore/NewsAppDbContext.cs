@@ -58,7 +58,7 @@ public class NewsAppDbContext :
     #region Entidades de dominio
 
     public DbSet<Theme> Themes { get; set; }
-
+    
 
     #endregion
 

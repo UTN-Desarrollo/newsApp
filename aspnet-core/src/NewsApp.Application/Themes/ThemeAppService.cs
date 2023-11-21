@@ -21,20 +21,21 @@ namespace NewsApp.Themes
             _repository = repository;
         }
 
+        //---------primera version para consultar
         public async Task<ICollection<ThemeDto>> GetThemesAsync()
         {
-            //para usar metodos asincronicos, se debe colocar el "await" antes
+        //para usar metodos asincronicos, se debe colocar el "await" antes
             var themes = await _repository.GetListAsync();
 
             return ObjectMapper.Map<ICollection<Theme>, ICollection<ThemeDto>>(themes);
         }
-
-        //Prueba para obtener 1 solo tema
-        public async Task<ThemeDto> GetThemesAsync(int id)
+        
+        //---------version de consulta final (muestra los datos del usuario)
+        public async Task<ThemeDto>GetThemesAsync(int id)
         {
-            //para usar metodos asincronicos, se debe colocar el "await" antes
-            var theme = await _repository.GetAsync(id);
-
+            var queryable = await _repository.WithDetailsAsync(x => x.User);
+            var query = queryable.Where(x => x.Id == id);
+            var theme = await AsyncExecuter.FirstOrDefaultAsync(query);
             return ObjectMapper.Map<Theme, ThemeDto>(theme);
         }
     }

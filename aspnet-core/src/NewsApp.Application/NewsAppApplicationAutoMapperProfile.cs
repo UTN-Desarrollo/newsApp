@@ -15,7 +15,6 @@ public class NewsAppApplicationAutoMapperProfile : Profile
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
         CreateMap<Theme, ThemeDto>();
-        //CreateMap<IdentityUser, UserDto>();
         CreateMap<NewsDto, ArticleDto>().ReverseMap();
         CreateMap<IdentityUser, UserDto>();
     }

@@ -12,5 +12,7 @@ namespace NewsApp.Themes
         public string Name { get; set; }
 
         public UserDto User { get; set; }
+
+        public ICollection<ThemeDto> Themes { get; set; }
     }
 }

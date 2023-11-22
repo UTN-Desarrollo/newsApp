@@ -21,6 +21,7 @@ namespace NewsApp.News
             //TODO: falta registrar los tiempos de acceso de la API
             //persistirlo de alguna forma
             var news = await _newsService.GetNewsAsync(query);
+
             return ObjectMapper.Map<ICollection<ArticleDto>, ICollection<NewsDto>>(news);
         }
 

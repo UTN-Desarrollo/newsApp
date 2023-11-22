@@ -21,5 +21,7 @@ namespace NewsApp.Themes
 
         //prueba para obtener 1 solo tema (get con id)
         Task<ThemeDto> GetThemesAsync(int id);
+
+        Task<ThemeDto> CreateAsync(CreateThemeDto input);
     }
 }
